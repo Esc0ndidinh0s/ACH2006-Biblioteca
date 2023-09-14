@@ -11,6 +11,7 @@ public class LivroTest {
         Editora editora = new Editora("Nome da Editora");
         Livro livro = new Livro(autor, editora, "1234567890", "Título do Livro", 200);
         Assert.assertEquals("Nome do Autor", livro.autor.nome);
+        Assert.assertEquals("Sobrenome do Autor", livro.autor.sobrenome);
         Assert.assertEquals("Nome da Editora", livro.editora.nome);
         Assert.assertEquals("1234567890", livro.isbn);
         Assert.assertEquals("Título do Livro", livro.titulo);

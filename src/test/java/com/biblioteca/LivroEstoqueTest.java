@@ -35,6 +35,8 @@ public class LivroEstoqueTest {
         LivroEstoque livroEstoque = new LivroEstoque(livro, 10, 50.0);
 
         livroEstoque.IncrementarExemplar();
+
+        Assert.assertEquals(livro, livroEstoque.livro);
         Assert.assertEquals(11, livroEstoque.exemplares);
         Assert.assertEquals(50.0, livroEstoque.valor, 0.01);
     }
