@@ -18,8 +18,11 @@ public class VendaTest {
         String nomeCliente = "Matheus Moreira";
         String formaPagamento = "Dinheiro";
         double valorDado = 23.5;
-        List<LivroVenda> livros = new ArrayList<LivroVenda>();
+        List<LivroVenda> livros = new ArrayList();
+        livros.add(MockLivroVenda());
+
         Venda venda = new Venda(nomeCliente, formaPagamento, valorDado, livros);
+
         Assert.assertNotNull(venda.nomeCliente);
         Assert.assertNotNull(venda.formaPagamento);
         Assert.assertNotNull(venda.valorDado);
@@ -37,5 +40,14 @@ public class VendaTest {
         Assert.assertNull(venda.formaPagamento);
         Assert.assertEquals(venda.valorDado, 0, 0);
         Assert.assertNull(venda.livros);
+    }
+
+    private LivroVenda MockLivroVenda() {
+        Autor autor = new Autor("Nome do Autor", "Sobrenome do autor");
+        Editora editora = new Editora("Nome da Editora");
+        Livro livro = new Livro(autor, editora, "1234567890", "Título do Livro", 200);
+        LivroEstoque livroEstoque = new LivroEstoque(livro, 10, 50.0);
+
+        return new LivroVenda(livroEstoque, 2);
     }
 }
