@@ -47,4 +47,20 @@ public class Biblioteca {
     public void RemoverEstoque(LivroEstoque livroEstoque) {
         this.estoque.remove(livroEstoque);
     }
+
+    public ArrayList<Livro> getLivros() {
+        return this.livros;
+    }
+
+    public ArrayList<Autor> getAutores() {
+        return this.autores;
+    }
+
+    public ArrayList<Editora> getEditoras() {
+        return this.editoras;
+    }
+
+    public ArrayList<LivroEstoque> getEstoque() {
+        return this.estoque;
+    }
 }
