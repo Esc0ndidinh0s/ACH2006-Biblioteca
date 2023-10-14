@@ -1,0 +1,11 @@
+Não é possível obter 100% de cobertura considerando todo o projeto, pois o teste unitário da classe Main não faz muito sentido de um ponto de vista teórico.
+O que exatamente se está testando ao testar o método main, visto que é um método estático que não retorna nada? Quando falamos de teste unitários, estamos querendo
+testar unidades funcionais de código, por isso faz mais sentido testar cada método de cada classe envolvida nas chamadas de Main, do que testar ela propriamente.
+Entretanto, é possível pedir para o Jacoco desconsiderar a classe Main durante os testes e, então, obter 100% de cobertura. Para isso, basta adicionar o seguinte
+comando dentro das configurações do plugin:
+
+<configuration>
+    <excludes>
+        <exclude>**/*com/biblioteca/Main.class</exclude>
+    </excludes>
+</configuration>
